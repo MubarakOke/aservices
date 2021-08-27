@@ -1,7 +1,7 @@
 asgiref==3.4.1
 certifi==2021.5.30
 charset-normalizer==2.0.4
-cloudinary==1.26.0
+-e git+https://github.com/MubarakOke/pycloudinary.git@d26317f741b73d75e9497bb876ab78dafba10cf8#egg=cloudinary
 dj-database-url==0.5.0
 Django==3.2.6
 django-cloudinary-storage==0.3.0
