@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"></meta>
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static "css/registration.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+            <div class="card field px-0 pt-4 pb-0 mt-3 mb-3">
+              <div class="container">
+                <img class="img-fluid logo" src="{% static "images/logo.png" %}" alt="logo">
+                <h2 id="heading">Professional Application form</h2>
+                <p>Fill all form field to go to next step</p>
+
+                <form id="msform" method="POST" enctype="multipart/form-data">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active" id="personal"><strong>Personal</strong></li>
+                        <li id="address"><strong class="strong">Address</strong></li>
+                        <li id="others"><strong class="strong">Others</strong></li>
+                        <li id="payment"><strong class="strong">Image</strong></li>
+
+                    </ul>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> <br>
+
+
+                     <!-- fieldsets -->
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Personal Information:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 1 - 4</h2>
+                                </div>
+                            </div>
+                            <div class="container error">
+                            {{ form.last_name.errors }}
+                            </div>
+                            <label class="fieldlabels">Last Name: </label>
+                            <input type="text" name="last_name" placeholder="" />
+                            <div class="container error">
+                            {{ form.first_name.errors }}
+                            </div>
+                            <label class="fieldlabels">First Name: </label>
+                            <input type="text" name="first_name" placeholder="" />
+                            <div class="container error">
+                            {{ form.other_name.errors }}
+                            </div>
+                            <label class="fieldlabels">Other Name: </label>
+                            <input type="text" name="other_name" placeholder="" />
+                            <div class="container error">
+                            {{ form.email.errors }}
+                            </div>
+                            <label class="fieldlabels">E-mail: </label>
+                            <input type="email" name="email" placeholder="" />
+                            <div class="container error">
+                            {{ form.phone.errors }}
+                            </div>
+                            <label class="fieldlabels">Phone no: </label>
+                            <input type="tel" name="phone" placeholder="" />
+                            <div class="container error">
+                            {{ form.gender.errors }}
+                            </div>
+                            <label class="fieldlabels">Gender: </label>
+                            <select name="gender" class="text-secondary">
+                              <option value selected/>Select Gender</option>
+                              <option value="male" />Male</option>
+                              <option value="female">Female</option>
+                            </select>
+                            <div class="container error">
+                            {{ form.date_of_birth.errors }}
+                            </div>
+                            <label class="fieldlabels">Date of Birth: </label>
+                            <input type="text" name="date_of_birth" placeholder="dd/mm/yyyy" />
+                            <div class="container error">
+                            {{ form.education_qualification.errors }}
+                            </div>
+                            <label class="fieldlabels">Highest education qualification: </label>
+                            <input type="text" name="education_qualification" placeholder="" />
+
+                        </div> <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+
+
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Address:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 2 - 4</h2>
+                                </div>
+                            </div>
+                            <div class="container error">
+                            {{ form.street.errors }}
+                            </div>
+                            <label class="fieldlabels">nbr, Street: </label>
+                            <input type="text" name="street" placeholder="" />
+                            <div class="container error">
+                            {{ form.city.errors }}
+                            </div>
+                            <label class="fieldlabels">City: </label>
+                            <input type="text" name="city" placeholder="" />
+                            <div class="container error">
+                            {{ form.country.errors }}
+                            </div>
+                            <label class="fieldlabels">Country: </label>
+                            <input type="text" name="country" placeholder="" />
+
+                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Other information:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 3 - 4</h2>
+                                </div>
+                            </div>
+                            <div class="container error">
+                            {{ form.shop_location.errors }}
+                            </div>
+                            <label class="fieldlabels">Shop/Office location: </label>
+                            <input type="text" name="shop_location" placeholder="" />
+                            <div class="container error">
+                            {{ form.internet_usage.errors }}
+                            </div>
+                            <label class="fieldlabels">Can you make use of internet: </label>
+                            <select name="internet_usage" class="text-secondary">
+                              <option value selected/>Select Option</option>
+                              <option value="yes" />Yes</option>
+                              <option value="no">No</option>
+                            </select>
+                            <div class="container error">
+                            {{ form.skill.errors }}
+                            </div>
+                            <label class="fieldlabels">What is your speciality, skill and strength: </label>
+                            <textarea name="skill" rows="3" cols="80"></textarea>
+                            <div class="container error">
+                            {{ form.working_duration.errors }}
+                            </div>
+                            <label class="fieldlabels">How long have you been working with your skill(s): </label>
+                            <input type="text" name="working_duration" placeholder="" />
+                            <div class="container error">
+                            {{ form.deadline_handling.errors }}
+                            </div>
+                            <label class="fieldlabels">Can you describe how you handle tight schedule: </label>
+                            <textarea name="deadline_handling" rows="3" cols="80"></textarea>
+                            <div class="container error">
+                            {{ form.project.errors }}
+                            </div>
+                            <label class="fieldlabels">What is the most interesting project you have embarked on: </label>
+                            <textarea name="project" rows="3" cols="80"></textarea>
+                            <div class="container error">
+                            {{ form.home_service.errors }}
+                            </div>
+                            <label class="fieldlabels">Can you do home service: </label>
+                            <select name="home_service" class="text-secondary">
+                              <option value selected/>Select Option</option>
+                              <option value="yes" />Yes</option>
+                              <option value="no">No</option>
+                            </select>
+                            <div class="container error">
+                            {{ form.expectation.errors }}
+                            </div>
+                            <label class="fieldlabels">What do you expect from A'SERVICES: </label>
+                            <textarea name="expectation" rows="3" cols="80"></textarea>
+                            <div class="container error">
+                            {{ form.relevant_information.errors }}
+                            </div>
+                            <label class="fieldlabels">Any other relevant information: </label>
+                            <textarea name="relevant_information" rows="3" cols="80"></textarea>
+
+                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="form-card mb-4">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Image Upload:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 4 - 4</h2>
+                                </div>
+                            </div>
+                            <div class="container error">
+                            {{ form.passport.errors }}
+                            </div>
+                            <label class="fieldlabels">Upload Your Photo:</label>
+                            <div class="custom-file">
+                              <input id="Image" type="file" name="passport" accept="image/*" class="custom-file-input imageInp">
+                              <label class="custom-file-label imgLab text-truncate">select image...</label>
+                            </div>
+
+                            <div class="container error  mt-3">
+                            {{ form.work_evidence.errors }}
+                            </div>
+                            <label class="fieldlabels">Upload evidence of previous work:</label>
+                            <div class="custom-file">
+                              <input id="File" type="file" name="work_evidence" accept="image/*,application/msword,application/x-zip-compressed,application/pdf,application/msexcel" class="custom-file-input fileInp">
+                              <label class="custom-file-label fileLab labelClass">select file...</label>
+                            </div>
+
+                        </div>
+                          <input type="submit" name="next" class="next action-button " value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+
+                    {% csrf_token  %}
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+   <script type="text/javascript" src="{% static "js/registration.js" %}"></script>
+
+   </script>
+  </body>
+</html>
