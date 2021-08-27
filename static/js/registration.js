@@ -6,19 +6,38 @@ var current = 1;
 var steps = $("fieldset").length;
 setProgressBar(current);
 
-
 $('.fileInp').on('change', function(){
-  let label= document.querySelector(".fileLab");
-  let fileName= document.getElementById("File").files[0].name;
-  console.log(fileName);
-  label.innerHTML= fileName;
-})
+  const size= (this.files[0].size/1024/1024).toFixed(2);
+  if(size>5){
+
+    alert("File must be less than 5 MB");
+  }
+  else{
+    let label= document.querySelector(".fileLab");
+    let fileName= document.getElementById("File").files[0].name;
+    console.log(fileName);
+    label.innerHTML= fileName;
+    let label1= document.querySelector(".output1");
+    label1.innerHTML= "file size: " + size + " MB";
+  }
+});
+
+
+
 
 $('.imageInp').on('change', function(){
+  const size= (this.files[0].size/1024/1024).toFixed(2);
+  if(size>5){
+    alert("File must be less than 5 MB");
+  }
+  else{
   let label= document.querySelector(".imgLab");
   let fileName= document.getElementById("Image").files[0].name;
   console.log(fileName);
   label.innerHTML= fileName;
+  let label1= document.querySelector(".output2");
+  label1.innerHTML= "file size: " + size + " MB";
+}
 })
 
 
