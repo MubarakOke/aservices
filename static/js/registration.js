@@ -12,9 +12,7 @@ $('.fileInp').on('change', function(){
 
   if (/\.(jpe?g|png|gif|pdf|gif|png|jpeg)$/i.test(file.files[0].name) === false ) {
     alert("upload an image or pdf!");
-    console.log(file.files.length);
     file.value=null;
-    console.log(file.files.length);
     let label= document.querySelector(".fileLab");
     label.innerHTML= "select file...";
   }
@@ -22,9 +20,7 @@ $('.fileInp').on('change', function(){
   const size= (this.files[0].size/1024/1024).toFixed(2);
       if(size>15){
         alert("File must be less than 15 MB");
-        console.log(file.files.length);
         file.value= null
-        console.log(file.files.length);
         let label= document.querySelector(".fileLab");
         label.innerHTML= "select file...";
       }
@@ -35,15 +31,8 @@ $('.fileInp').on('change', function(){
 
         let label1= document.querySelector(".output1");
         label1.innerHTML= "file size: " + size + " MB";
-        console.log(file.files.length);
       }}
 });
-
-
-
-
-
-
 
 
 
