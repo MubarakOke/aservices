@@ -7,20 +7,42 @@ var steps = $("fieldset").length;
 setProgressBar(current);
 
 $('.fileInp').on('change', function(){
-  const size= (this.files[0].size/1024/1024).toFixed(2);
-  if(size>5){
 
-    alert("File must be less than 5 MB");
+  let file= document.querySelector('.fileInp');
+
+  if (/\.(jpe?g|png|gif|pdf|gif|png|jpeg)$/i.test(file.files[0].name) === false ) {
+    alert("upload an image or pdf!");
+    console.log(file.files.length);
+    file.value=null;
+    console.log(file.files.length);
+    let label= document.querySelector(".fileLab");
+    label.innerHTML= "select file...";
   }
   else{
-    let label= document.querySelector(".fileLab");
-    let fileName= document.getElementById("File").files[0].name;
-    console.log(fileName);
-    label.innerHTML= fileName;
-    let label1= document.querySelector(".output1");
-    label1.innerHTML= "file size: " + size + " MB";
-  }
+  const size= (this.files[0].size/1024/1024).toFixed(2);
+      if(size>5){
+        alert("File must be less than 5 MB");
+        console.log(file.files.length);
+        file.value= null
+        console.log(file.files.length);
+        let label= document.querySelector(".fileLab");
+        label.innerHTML= "select file...";
+      }
+      else{
+        let label= document.querySelector(".fileLab");
+        let fileName= document.getElementById("File").files[0].name;
+        label.innerHTML= fileName;
+
+        let label1= document.querySelector(".output1");
+        label1.innerHTML= "file size: " + size + " MB";
+        console.log(file.files.length);
+      }}
 });
+
+
+
+
+
 
 
 
