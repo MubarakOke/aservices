@@ -28,7 +28,7 @@ class ProfessionalForm(forms.ModelForm):
     relevant_information=forms.CharField(required=True, label="Any other relevant information")
 
     # Image upload
-    work_evidence= CloudinaryFileField(options={"resource_type":"auto","use_filename": True}, required=True)
+    work_evidence= CloudinaryFileField(required=True)
 
     class Meta:
         model= Professional
