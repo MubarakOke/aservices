@@ -11,7 +11,7 @@ $('.fileInp').on('change', function(){
   let file= document.querySelector('.fileInp');
 
   if (/\.(jpe?g|png|gif|pdf|gif|png|jpeg)$/i.test(file.files[0].name) === false ) {
-    alert("upload an image or pdf!");
+    alert("Select an image or pdf");
     file.value=null;
     let label= document.querySelector(".fileLab");
     label.innerHTML= "select file...";
@@ -27,6 +27,9 @@ $('.fileInp').on('change', function(){
       else{
         let label= document.querySelector(".fileLab");
         let fileName= document.getElementById("File").files[0].name;
+        if (fileName.length >20){
+          fileName=fileName.slice(0,20) + "..."
+        }
         label.innerHTML= fileName;
 
         let label1= document.querySelector(".output1");
