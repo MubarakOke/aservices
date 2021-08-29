@@ -18,7 +18,8 @@
               <div class="container">
                 <img class="img-fluid logo" src="{% static "images/logo.png" %}" alt="logo">
                 <h2 id="heading">Professional Application form</h2>
-                <p>Fill all form field to go to next step</p>
+                <p>Fill all form field to go to next step </br>Leaving a compulsory section empty invalidate submission</br> <span class="required">* Required<span></p>
+
 
                 <form id="msform" method="POST" enctype="multipart/form-data">
                     <!-- progressbar -->
@@ -48,12 +49,12 @@
                             <div class="container error">
                             {{ form.last_name.errors }}
                             </div>
-                            <label class="fieldlabels">Last Name: </label>
+                            <label class="fieldlabels">Last Name:<span class="required">*</span></label>
                             <input type="text" name="last_name" placeholder="" />
                             <div class="container error">
                             {{ form.first_name.errors }}
                             </div>
-                            <label class="fieldlabels">First Name: </label>
+                            <label class="fieldlabels">First Name:<span class="required">*</span> </label>
                             <input type="text" name="first_name" placeholder="" />
                             <div class="container error">
                             {{ form.other_name.errors }}
@@ -63,17 +64,17 @@
                             <div class="container error">
                             {{ form.email.errors }}
                             </div>
-                            <label class="fieldlabels">E-mail: </label>
+                            <label class="fieldlabels">E-mail:<span class="required">*</span></label>
                             <input type="email" name="email" placeholder="" />
                             <div class="container error">
                             {{ form.phone.errors }}
                             </div>
-                            <label class="fieldlabels">Phone no: </label>
+                            <label class="fieldlabels">Phone no:<span class="required">*</span></label>
                             <input type="tel" name="phone" placeholder="" />
                             <div class="container error">
                             {{ form.gender.errors }}
                             </div>
-                            <label class="fieldlabels">Gender: </label>
+                            <label class="fieldlabels">Gender:<span class="required">*</span></label>
                             <select name="gender" class="text-secondary">
                               <option value selected/>Select Gender</option>
                               <option value="male" />Male</option>
@@ -82,12 +83,12 @@
                             <div class="container error">
                             {{ form.date_of_birth.errors }}
                             </div>
-                            <label class="fieldlabels">Date of Birth: </label>
+                            <label class="fieldlabels">Date of Birth:<span class="required">*</span></label>
                             <input type="text" name="date_of_birth" placeholder="mm/dd/yyyy" />
                             <div class="container error">
                             {{ form.education_qualification.errors }}
                             </div>
-                            <label class="fieldlabels">Highest education qualification: </label>
+                            <label class="fieldlabels">Highest education qualification:<span class="required">*</span></label>
                             <input type="text" name="education_qualification" placeholder="" />
 
                         </div> <input type="button" name="next" class="next action-button" value="Next" />
@@ -107,17 +108,17 @@
                             <div class="container error">
                             {{ form.street.errors }}
                             </div>
-                            <label class="fieldlabels">nbr, Street: </label>
+                            <label class="fieldlabels">nbr, Street:<span class="required">*</span></label>
                             <input type="text" name="street" placeholder="" />
                             <div class="container error">
                             {{ form.city.errors }}
                             </div>
-                            <label class="fieldlabels">City: </label>
+                            <label class="fieldlabels">City:<span class="required">*</span></label>
                             <input type="text" name="city" placeholder="" />
                             <div class="container error">
                             {{ form.country.errors }}
                             </div>
-                            <label class="fieldlabels">Country: </label>
+                            <label class="fieldlabels">Country:<span class="required">*</span></label>
                             <input type="text" name="country" placeholder="" />
 
                         </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -136,12 +137,12 @@
                             <div class="container error">
                             {{ form.shop_location.errors }}
                             </div>
-                            <label class="fieldlabels">Shop/Office location: </label>
+                            <label class="fieldlabels">Shop/Office location:<span class="required">*</span></label>
                             <input type="text" name="shop_location" placeholder="" />
                             <div class="container error">
                             {{ form.internet_usage.errors }}
                             </div>
-                            <label class="fieldlabels">Can you make use of internet: </label>
+                            <label class="fieldlabels">Can you make use of internet:<span class="required">*</span></label>
                             <select name="internet_usage" class="text-secondary">
                               <option value selected/>Select Option</option>
                               <option value="yes" />Yes</option>
@@ -150,27 +151,27 @@
                             <div class="container error">
                             {{ form.skill.errors }}
                             </div>
-                            <label class="fieldlabels">What is your speciality, skill and strength: </label>
+                            <label class="fieldlabels">What is your speciality, skill and strength:<span class="required">*</span></label>
                             <textarea name="skill" rows="3" cols="80"></textarea>
                             <div class="container error">
                             {{ form.working_duration.errors }}
                             </div>
-                            <label class="fieldlabels">How long have you been working with your skill(s): </label>
+                            <label class="fieldlabels">How long have you been working with your skill(s):<span class="required">*</span></label>
                             <input type="text" name="working_duration" placeholder="" />
                             <div class="container error">
                             {{ form.deadline_handling.errors }}
                             </div>
-                            <label class="fieldlabels">Can you describe how you handle tight schedule: </label>
+                            <label class="fieldlabels">Can you describe how you handle tight schedule:<span class="required">*</span></label>
                             <textarea name="deadline_handling" rows="3" cols="80"></textarea>
                             <div class="container error">
                             {{ form.project.errors }}
                             </div>
-                            <label class="fieldlabels">What is the most interesting project you have embarked on: </label>
+                            <label class="fieldlabels">What is the most interesting project you have embarked on:<span class="required">*</span></label>
                             <textarea name="project" rows="3" cols="80"></textarea>
                             <div class="container error">
                             {{ form.home_service.errors }}
                             </div>
-                            <label class="fieldlabels">Can you do home service: </label>
+                            <label class="fieldlabels">Can you do home service:<span class="required">*</span></label>
                             <select name="home_service" class="text-secondary">
                               <option value selected/>Select Option</option>
                               <option value="yes" />Yes</option>
@@ -179,12 +180,12 @@
                             <div class="container error">
                             {{ form.expectation.errors }}
                             </div>
-                            <label class="fieldlabels">What do you expect from A'SERVICES: </label>
+                            <label class="fieldlabels">What do you expect from A'SERVICES:<span class="required">*</span></label>
                             <textarea name="expectation" rows="3" cols="80"></textarea>
                             <div class="container error">
                             {{ form.relevant_information.errors }}
                             </div>
-                            <label class="fieldlabels">Any other relevant information: </label>
+                            <label class="fieldlabels">Any other relevant information:<span class="required">*</span></label>
                             <textarea name="relevant_information" rows="3" cols="80"></textarea>
 
                         </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -213,7 +214,7 @@
                             <div class="container error  mt-3">
                             {{ form.work_evidence.errors }}
                             </div>
-                            <label class="fieldlabels">Upload evidence of previous work:</label>
+                            <label class="fieldlabels">Upload evidence of previous work: image or pdf<span class="required">*</span></label>
                             <div class="custom-file">
                               <input id="File" type="file" name="work_evidence" accept="image/*,application/pdf" class="custom-file-input fileInp">
                               <label class="custom-file-label fileLab labelClass">select file...image/pdf</label>

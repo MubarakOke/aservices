@@ -280,3 +280,6 @@ p {
       font-size: 24px;
   }
 }
+.required{
+  color: red;
+}
