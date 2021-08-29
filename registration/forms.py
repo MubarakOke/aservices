@@ -1,5 +1,6 @@
 from django import forms
 from registration.models import Professional
+from cloudinary.forms import CloudinaryFileField
 
 class ProfessionalForm(forms.ModelForm):
     # Personal information fields
@@ -27,7 +28,7 @@ class ProfessionalForm(forms.ModelForm):
     relevant_information=forms.CharField(required=True, label="Any other relevant information")
 
     # Image upload
-    work_evidence= forms.FileField(required=True)
+    work_evidence= CloudinaryFileField(options={"resource_type":"auto","use_filename": True}, required=True)
 
     class Meta:
         model= Professional
