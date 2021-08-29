@@ -20,8 +20,8 @@ $('.fileInp').on('change', function(){
   }
   else{
   const size= (this.files[0].size/1024/1024).toFixed(2);
-      if(size>5){
-        alert("File must be less than 5 MB");
+      if(size>15){
+        alert("File must be less than 15 MB");
         console.log(file.files.length);
         file.value= null
         console.log(file.files.length);
